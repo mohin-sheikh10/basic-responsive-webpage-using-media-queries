@@ -9,6 +9,7 @@ menubar.addEventListener('click', function() {
 
 window.onscroll = () => {
     navlink.classList.remove('active');
+    menubarIcon.classList.remove('fa-x')
 }
 
 

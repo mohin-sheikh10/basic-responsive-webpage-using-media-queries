@@ -8,6 +8,7 @@
   border: none;
   outline: none;
   text-transform: capitalize;
+  transition: 0.5s ease;
 }
 :root {
   --main-color: #921a40;
@@ -39,7 +40,7 @@ html {
   scroll-padding-top: 7rem;
 }
 body {
-  background-color: var(--light-bg);
+  background-color: var(--white);
 }
 section {
   padding: 2rem;
@@ -54,12 +55,12 @@ section {
   left: 0;
   right: 0;
   z-index: 1000;
-  /* background-color: var(--white); */
+  background-color: var(--white);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 8%;
-  border-bottom: var(--border);
+  box-shadow: var(--box-shadow);
 }
 .logo {
   font-size: 2.5rem;
@@ -98,75 +99,216 @@ nav .navlink {
   padding: 12px 30px;
   font-size: 1.5rem;
   border-radius: 5px;
+  cursor: pointer;
 }
 .btn:hover {
-    background-color: var(--light-color);
+  background-color: var(--light-color);
 }
 .menubar {
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    display: none;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  display: none;
 }
 .menubar i {
-    font-size: 3rem;
-    color: var(--main-color);
+  font-size: 3rem;
+  color: var(--main-color);
 }
 
-
-
-
-
-
+/* --- Main Section --- */
+.home {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("/images/h5-top-backround-transparent.png");
+  background-size: cover;
+  background-position: center;
+  padding: 0 8%;
+}
+.homeText {
+  flex: 50%;
+}
+.homeText h1 {
+  font-size: 6.5rem;
+  color: var(--main-color);
+}
+.homeText img {
+  width: 25%;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+.homeImage {
+  flex: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+}
+.homeImage img {
+  width: 90%;
+}
+.homeImage:hover img {
+  transform: rotate(-25deg);
+}
+/* --- Simple Cards Section --- */
+.simpleCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+  gap: 2rem;
+  align-items: center;
+  margin-top: 5rem;
+}
+.card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.5rem;
+  border-radius: 5px;
+}
+.card:hover {
+  /* background-color: var(--light-bg); */
+  box-shadow: var(--box-shadow);
+}
+.card.active {
+  box-shadow: var(--box-shadow);
+}
+.cardIcon {
+  /* background-color: var(--main-color); */
+  width: 230px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: var(--border);
+  font-size: 2.5rem;
+}
+.cardText h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.cardText p {
+  font-size: 1.4rem;
+}
+/* --- Application Section --- */
+.application {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-top: 5rem;
+  align-items: center;
+}
+.applicationImage {
+  margin-top: 5rem;
+}
+.applicationImage img {
+  width: 100%;
+}
+.applicationImage img:hover {
+  transform: scale(1.1);
+}
+.applicationText h5 {
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+.applicationText h1 {
+  font-size: 5rem;
+  width: 80%;
+}
+.applicationText p {
+  font-size: 1.5rem;
+  margin: 2rem 0;
+}
+.btn2 {
+  margin-left: 0;
+  margin-top: 3rem;
+}
+/* ---- Footer Section ---- */
+.footer {
+  width: 100%;
+  background-color: var(--light-bg);
+  color: var(--black);
+  text-align: center;
+  margin-top: 2rem;
+  padding: 5rem;
+}
+.footer h1 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+.footer p {
+  font-size: 1.8rem;
+}
+.footer img {
+  margin-top: 3rem;
+  cursor: pointer;
+}
 /* ---- For Mobile Device ---- */
 @media screen and (max-width: 991px) {
-    html {
-        font-size: 55%;
-    }
+  html {
+    font-size: 55%;
+  }
+  .homeText h1 {
+    font-size: 5rem;
+  }
 }
 @media screen and (max-width: 769px) {
-    .menubar {
-        display: block;
-    }
-    .navlink {
-        position: absolute;
-        top: -45rem;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        background-color: var(--white);
-        align-items: center;
-        justify-content: center;
-        padding: 2rem 0;
-    }
-    .navlink.active {
-        top: 99%;
-    }
-    .navlink li {
-        margin: 2rem 0;
-    }
+  .menubar {
+    display: block;
+  }
+  .navlink {
+    position: absolute;
+    top: -45rem;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: var(--white);
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+  }
+  .navlink.active {
+    top: 99%;
+  }
+  .navlink li {
+    margin: 2rem 0;
+  }
 
-    .btn {
-        margin-left: 0;
-    }
+  .btn {
+    margin-left: 0;
+  }
+  .home {
+    flex-direction: column-reverse;
+    /* padding: 2rem; */
+    margin-top: 7rem;
+  }
+  .homeImage {
+    flex: 100%;
+  }
+  .homeImage img {
+    width: 60%;
+  }
+  .homeText {
+    flex: 100%;
+    text-align: center;
+  }
+  .homeText h1 {
+    font-size: 4rem;
+  }
+  .application {
+    grid-template-columns: 1fr;
+  }
+  .applicationText {
+    text-align: center;
+  }
+  .applicationText h1 {
+    width: 100%;
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
